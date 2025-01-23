@@ -17,11 +17,10 @@ const findCodeBySourceMap = async (stackFrame: ErrorStackParser.StackFrame) => {
   // 如果报错堆栈中没有文件名、行号或列号，则返回
   if (!stackFrame.fileName || !stackFrame.lineNumber || !stackFrame.columnNumber) return
   // 获取 map 文件
-  const sourceMapFile = await getSourceMapFile(stackFrame.fileName)
+  const sourceMapFile = await getSourceMapFile(stackFrame.fileName + '.map')
 
-  const fileContent = sourceMapFile.data
   // 解析源映射文件
-  const consumer = await new sourceMap.SourceMapConsumer(fileContent)
+  const consumer = await new sourceMap.SourceMapConsumer(sourceMapFile)
   // 使用源映射文件解析错误堆栈中的函数调用(通过报错位置查找源文件的名称以及报错行数)
   const originalPosition = consumer.originalPositionFor({
     line: stackFrame.lineNumber,
