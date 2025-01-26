@@ -4,23 +4,20 @@ import { onMounted } from 'vue'
 // import HelloWorld from './components/HelloWorld.vue'
 
 onMounted(() => {
-  const testNum = null;
-  if (testNum!.length > 1) {
-    console.warn('报错了');
-  }
+  // const testNum = null
+  // if (testNum!.length > 1) {
+  //   console.warn('报错了')
+  // }
 })
 </script>
 
 <template>
   <header>
-    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
-
     <div class="wrapper">
-      <!-- <HelloWorld msg="You did it!" /> -->
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/trigger">触发异常</RouterLink>
       </nav>
     </div>
   </header>
@@ -82,12 +79,12 @@ nav a:first-of-type {
   }
 
   nav {
-    text-align: left;
-    margin-left: -1rem;
     font-size: 1rem;
+    /* text-align: left;
+    margin-left: -1rem;
 
     padding: 1rem 0;
-    margin-top: 1rem;
+    margin-top: 1rem; */
   }
 }
 </style>
