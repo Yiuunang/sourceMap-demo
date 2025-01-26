@@ -4,6 +4,8 @@ import { onMounted, ref } from 'vue'
 import type { ErrorList } from '../types'
 import sourceMap from 'source-map-js'
 
+import Preview from '../components/Preview.vue'
+
 const js_error = ref<ErrorList>(null)
 // 聚焦的 collapse
 const activeNames = ref([0])
@@ -93,7 +95,9 @@ onMounted(() => {
           </el-col>
         </el-row>
         <el-row :gutter="20">
-          <template v-if="item.origin"> 源码: {{ item.origin }} </template>
+          <template v-if="item.origin">
+            <Preview :orgin="item.origin"></Preview>
+          </template>
           <template v-else>
             <div>{{ item.fileName }}</div>
           </template>
