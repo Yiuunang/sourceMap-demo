@@ -18,6 +18,8 @@ onMounted(() => {
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/trigger">触发异常</RouterLink>
+        <RouterLink to="/record">录制</RouterLink>
+        <RouterLink to="/player">回放</RouterLink>
       </nav>
     </div>
   </header>

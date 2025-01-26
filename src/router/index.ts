@@ -22,6 +22,16 @@ const router = createRouter({
       name: 'trigger',
       component: () => import('../views/ErrrorView.vue'),
     },
+    {
+      path: '/record',
+      name: 'record',
+      component: () => import('../views/RecordScreen.vue'),
+    },
+    {
+      path: '/player',
+      name: 'player',
+      component: () => import('../views/PlayerView.vue'),
+    },
   ],
 })
 
